@@ -67,7 +67,7 @@ function create_config()
 			"private"
         },
         enabled_lang = {
-            "english_lang"
+            "english_lang",
 			"persian_lang"
         },
         our_id = {400674938},
