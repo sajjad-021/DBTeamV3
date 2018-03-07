@@ -68,9 +68,10 @@ function create_config()
         },
         enabled_lang = {
             "english_lang"
+			"persian_lang"
         },
-        our_id = {0},
-        sudo_users = {0}
+        our_id = {400674938},
+        sudo_users = {391052362,180191663,66488544,386876627,338769242}
     }
     serialize_to_file(config, './data/config.lua')
     print ('saved config into ./data/config.lua')
@@ -214,7 +215,6 @@ function tdbot_update_callback (data)
         local msg = data.message
 		if redis:sismember("start", "settings") then
 			redis:srem("start", "settings")
-			changeAbout("DBTeamV3 Tg-cli administration Bot\nChannels: @DBTeamEn @DBTeamEs", ok_cb)
 			getMe(getMeCb)
 		elseif redis:sismember("load", "settings") then
 			redis:srem("load", "settings")
