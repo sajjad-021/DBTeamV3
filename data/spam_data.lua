@@ -13,9 +13,9 @@ return {
 
   whitelist = {
     ["default"] = {
-      "@DBTeam",
-      "@DBTeamES",
-      "@DBTeamEN"
+      "@tgMemberOfficial",
+      "@tgKing",
+      "@sajjad_021"
     }
   }
 }
