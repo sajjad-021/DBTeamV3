@@ -94,14 +94,6 @@ function login_bot() {
     ./telegram-bot -p main --login --phone=${1}
 }
 
-function update_bot() {
-  git checkout launch.sh plugins/ lang/ bot/ libs/
-  git pull
-  echo chmod +x launch.sh | /bin/bash
-  version=$(echo "./launch.sh tgcli_version" | /bin/bash)
-  update_bot_to $version
-}
-
 function update_bot_to() {
 	wget --progress=bar:force https://valtman.name/files/telegram-bot-${1}-linux 2>&1 | get_sub
     mv telegram-bot-${1}-linux telegram-bot; chmod +x telegram-bot
@@ -147,9 +139,6 @@ case $1 in
         echo "Please enter your phone number: "
         read phone_number
         login_bot ${phone_number}
-    exit ;;
-    update)
-		update_bot
 		exit ;;
 	update-to)
 		echo "Please enter bot version: "
